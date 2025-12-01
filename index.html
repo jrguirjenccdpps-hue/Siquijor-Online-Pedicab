@@ -15,9 +15,6 @@
   textarea { resize: vertical; }
   button { padding:12px 20px; margin-top:15px; width:100%; background:#2e7d32; color:white; font-size:16px; border:none; border-radius:10px; cursor:pointer; }
   .success-popup { display:none; background:#e8fbef; border-left:4px solid #2e7d32; padding:10px; margin-top:15px; text-align:center; font-weight:bold; }
-  .tip-section { margin-top:30px; text-align:center; }
-  .tip-section button { background:#ff8a00; margin:5px 0; }
-  .disclaimer { font-size:0.9em; color:#555; margin-top:10px; text-align:center; }
 </style>
 </head>
 <body>
@@ -61,25 +58,15 @@
     <input type="hidden" id="dateTime">
 
     <button type="button" id="submitBtn">Send Request</button>
-
-    <div class="disclaimer">
-      🔒 Your information is used only for booking and will not be shared.<br>
-      For urgent bookings call your local number.
-    </div>
   </form>
 
   <div class="success-popup" id="successPopup">
     ✔ Your request has been sent successfully!
   </div>
 
-  <div class="tip-section">
-    <h3>Customer Care Hotline</h3>
-    <p>MPN: 09652367470</p>
-    <p>Email: siquijorpedicab@gmail.com</p>
-    <p>Tips (Optional)</p>
-    <button onclick="copyNumber('09652367470','GCash')">Copy GCash Number</button>
-    <button onclick="copyNumber('639652367470','PalawanPay')">Copy PalawanPay Number</button>
-  </div>
+  <button style="margin-top:20px; background:#555;" onclick="window.location.href='https://jrguirjenccdpps-hue.github.io/Siquijor-Pedicab-and-Delivery/'">
+    ← Back to Main Page
+  </button>
 </div>
 
 <script>
@@ -88,11 +75,6 @@ const API_SECRET = "siquijor@2025";
 
 // Autofill date/time
 document.getElementById("dateTime").value = new Date().toISOString();
-
-function copyNumber(number,type){
-  navigator.clipboard.writeText(number);
-  alert(type+" number copied: "+number);
-}
 
 function validateForm(){
   return document.getElementById("pedicabForm").checkValidity();
